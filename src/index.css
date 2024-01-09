@@ -129,13 +129,10 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease;
-  opacity: 1;
 }
 
 .menu--open .menu__backdrop {
   visibility: visible;
-  opacity: 0;
 }
 .menu--open {
   max-height: 100vh;
@@ -153,10 +150,17 @@ nav {
 }
 
 .menu__link,
-.menu__link:visited {
+.menu__link:visited,
+.menu__link:active {
   /* Apply styles to both normal and visited states */
   text-decoration: none;
   color: white;
+  font-size: 24px;
+}
+
+.menu__list a {
+  color: white;
+  text-decoration: none;
   font-size: 24px;
 }
 
@@ -181,10 +185,11 @@ header {
 header .container {
   width: 100%;
   display: flex;
-  margin-top: -80px;
 }
 
 .header__left {
+  transform: translateY(-80px);
+  position: relative;
   display: flex;
   margin: 0 auto;
   text-align: center;
@@ -594,6 +599,10 @@ footer a {
   .vendor-description {
     /* Decrease font size for text elements */
     font-size: 14px;
+  }
+
+  .header__left {
+    transform: translateY(0px);
   }
 
   .vendor-name {
