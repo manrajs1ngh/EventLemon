@@ -152,14 +152,12 @@ nav {
   padding: 16px 0;
 }
 
-.menu__link {
-  text-decoration: none; /* Removes underline */
-  color: white; /* Set your desired link color */
+.menu__link,
+.menu__link:visited {
+  /* Apply styles to both normal and visited states */
+  text-decoration: none;
+  color: white;
   font-size: 24px;
-  /* Remove link color change on visited */
-  &:visited {
-    color: white;
-  }
 }
 
 .btn__menu--close {

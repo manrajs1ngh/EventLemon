@@ -8,14 +8,9 @@ function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMenu() {
-    if (isMenuOpen) {
-      // Start the closing transition
-      setIsMenuOpen(false);
-    } else {
-      // Open immediately
-      setIsMenuOpen(true);
-    }
+    setIsMenuOpen(!isMenuOpen);
   }
+
   function menuClose() {
     setIsMenuOpen(false);
   }
@@ -55,7 +50,7 @@ function Nav() {
                 </Link>
               </li>
               <li className="menu__list">
-                <Link to="/vendors" className="menu__link" onClick={menuClose}>
+                <Link to="/vendors" classN="menu__link" onClick={menuClose}>
                   Find a Vendor
                 </Link>
               </li>
