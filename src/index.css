@@ -287,43 +287,6 @@ header p {
   box-shadow: 6px 6px 0 #d6ede0;
 }
 
-/* Our Process Section */
-#our-process {
-  background-color: white;
-  padding-bottom: 120px;
-}
-
-#our-process .section__title {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.our-process__container {
-  display: flex;
-  gap: 32px;
-}
-
-.process-step__container {
-  background-color: #d6ede0;
-  border-radius: 16px;
-  padding: 24px;
-}
-
-.process-step__icon {
-  font-size: 24px;
-  margin-bottom: 8px;
-  margin-left: 8px;
-}
-
-.process-step__title {
-  font-size: 20px;
-}
-
-.process-step__description {
-  margin-top: 16px;
-  font-size: 16px;
-}
-
 /* Get Listed Form */
 #get-listed-form {
   height: calc(100vh - 80px);

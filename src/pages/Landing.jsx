@@ -115,28 +115,6 @@ function Landing() {
           </div>
         </div>
       </section>
-      <section id="our-process">
-        <div className="container">
-          <h1 className="section__title">Our Process</h1>
-          <div className="our-process__container">
-            <ProcessStep
-              icon={<FontAwesomeIcon icon={faCheckSquare} />}
-              title="Choose your event type"
-              description="Start by selecting the type of event you're planning, whether it's a grand wedding, a corporate gala, or an intimate birthday bash. We cater to a wide range of occasions, ensuring a tailored experience from the get-go."
-            />
-            <ProcessStep
-              icon={<FontAwesomeIcon icon={faMagnifyingGlass} />}
-              title="Browse our vendors"
-              description="Explore our curated list of vendors, ranging from stunning venues to talented photographers, and everything in between. Filter by style, location, and budget to find the perfect match for your event's specific needs and vision."
-            />
-            <ProcessStep
-              icon={<FontAwesomeIcon icon={faClipboardList} />}
-              title="Plan your perfect event"
-              description="Once you've selected your vendors, connect directly with them to finalize details. Our platform facilitates seamless communication and coordination, helping you bring together all elements of your event effortlessly and efficiently."
-            />
-          </div>
-        </div>
-      </section>
       <GetListedForm />
     </>
   );
