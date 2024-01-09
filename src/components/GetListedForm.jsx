@@ -36,22 +36,23 @@ function GetListedForm() {
           </p>
           <form ref={form} onSubmit={sendEmail} className="get-listed">
             <div className="form-item">
-              <input type="text" name="name" placeholder="Name" />
+              <input type="text" name="name" placeholder="Name" required/>
             </div>
             <div className="form-item">
-              <input type="email" name="email" placeholder="Email" />
+              <input type="email" name="email" placeholder="Email" required/>
             </div>
             <div className="form-item">
-              <input type="text" name="vendor_name" placeholder="Vendor name" />
+              <input type="text" name="vendor_name" placeholder="Vendor name" required/>
             </div>
             <div className="form-item">
-              <input type="text" name="vendor_type" placeholder="Vendor type" />
+              <input type="text" name="vendor_type" placeholder="Vendor type" required/>
             </div>
             <div className="form-item">
               <input
                 type="text"
                 name="vendor_location"
                 placeholder="Vendor location"
+                required
               />
             </div>
             <div className="form-item">
