@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { vendors } from "../data";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faInstagram,
-    faSquareFacebook,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//     faInstagram,
+//     faSquareFacebook,
+// } from "@fortawesome/free-solid-svg-icons";
 
 function VendorDetail() {
   const { id } = useParams();
