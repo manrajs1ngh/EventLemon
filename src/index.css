@@ -1,13 +1,737 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap");
+
+/* General Styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fafaee;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Typography */
+.section__title {
+  font-family: "Merriweather", sans-serif;
+  font-size: 45px;
+  color: #1b1917;
+}
+
+.para {
+  font-size: 18px;
+  color: #1b1917;
+}
+
+/* Button Styles */
+.button {
+  padding: 12px 20px;
+  background-color: #f4c143;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  border: 2px solid #f4c143;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: #f4c143;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+.header__ctaButton {
+  margin-right: 16px;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  height: 80px;
+}
+
+.nav__logo {
+  max-width: 72px;
+  width: 100%;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+
+.nav__listItem {
+  margin-left: 20px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: black;
+}
+
+.nav__link--primary {
+  border-radius: 32px;
+  padding: 12px 16px;
+  background-color: #f4c143;
+  border: 2px solid #f4c143;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.nav__link--primary:hover {
+  background-color: transparent;
+  color: #f4c143;
+}
+
+.nav__link--primary:active {
+  transform: scale(0.9);
+}
+
+/* Hamburger Menu Button */
+.btn__menu {
+  background-color: transparent;
+  font-size: 32px;
+  border: none;
+  color: #1b1917;
+  display: none;
+}
+
+/* Mobile Menu Styles */
+.menu__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+  z-index: 1000; /* Ensure it's above other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.menu--open .menu__backdrop {
+  visibility: visible;
+  opacity: 0;
+}
+.menu--open {
+  max-height: 100vh;
+  overflow: hidden;
+}
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+
+.menu__list {
+  padding: 16px 0;
+}
+
+.menu__link {
+  text-decoration: none; /* Removes underline */
+  color: white; /* Set your desired link color */
+  font-size: 24px;
+  /* Remove link color change on visited */
+  &:visited {
+    color: white;
+  }
+}
+
+.btn__menu--close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 100000;
+  padding: 8px;
+  color: white;
+}
+
+/* Landing Page Components */
+header {
+  height: calc(100vh - 80px);
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fafaee;
+}
+
+header .container {
+  width: 100%;
+  display: flex;
+  margin-top: -80px;
+}
+
+.header__left {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+header h1 {
+  font-size: 64px;
+  color: #1b1917;
+  font-family: "Merriweather", sans-serif;
+  margin-bottom: 16px;
+}
+
+header p {
+  font-size: 24px;
+  color: #1b1917;
+  margin-bottom: 28px;
+}
+
+/* Featured Vendors */
+#featured-vendors {
+  padding: 120px 0px;
+  background-color: #fbe8d8;
+}
+
+#featured-vendors .section__title {
+  margin-bottom: 20px;
+}
+
+#featured-vendors .para {
+  margin-bottom: 20px;
+}
+
+.featured_vendors__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.featured-vendors__title {
+  font-size: 20px;
+}
+
+.featured-vendors__para {
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+.featured-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+
+.featured_vendors__item {
+  background-color: #ffc1a8;
+  border-radius: 16px;
+  padding: 24px;
+  width: calc(100% / 3 - 32px);
+}
+
+/* About us */
+#about-us {
+  padding: 120px 0px;
+  background-color: white;
+}
+
+#about-us .container {
+  display: flex;
+  gap: 48px;
+  justify-content: space-between;
+}
+
+.about-us__left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.about-us__right {
+  width: 50%;
+}
+
+#about-us .section__title {
+  margin-bottom: 20px;
+}
+
+.about-us__left img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 #d6ede0;
+}
+
+/* Our Process Section */
+#our-process {
+  background-color: white;
+  padding-bottom: 120px;
+}
+
+#our-process .section__title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.our-process__container {
+  display: flex;
+  gap: 32px;
+}
+
+.process-step__container {
+  background-color: #d6ede0;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.process-step__icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+
+.process-step__title {
+  font-size: 20px;
+}
+
+.process-step__description {
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+/* Get Listed Form */
+#get-listed-form {
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.get-listed__container {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+#get-listed-form .section__title {
+  margin-bottom: 20px;
+}
+
+#get-listed-form .para {
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  background-color: white;
+  color: black;
+  outline: none;
+  border: 1px solid #c0c4cc;
+  border-radius: 32px;
+  transition: all 300ms ease;
+  margin-bottom: 8px;
+  padding: 16px 16px;
+}
+
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+input:hover,
+textarea:hover {
+  border-color: white;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #faf8f0;
+}
+.submit-button {
+  margin-top: 16px;
+  width: 25%;
+}
+
+/* SearchPage Components */
+/* Searchbar */
+.searchbar__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 1%;
+}
+
+.searchbar__wrapper input {
+  width: 79%;
+  display: inline-block;
+}
+
+.searchbar__wrapper button {
+  width: 20%;
+  display: inline-block;
+}
+
+.search__text {
+  padding: 100px 0px;
+  text-align: center;
+  width: 720px;
+  margin: 0 auto;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+  grid-auto-flow: dense;
+}
+
+.search__text .section__title {
+  margin-bottom: 20px;
+}
+
+.search__text .para {
+  margin-bottom: 20px;
+}
+
+.error-message {
+  margin-top: 20px;
+}
+
+/* Vendor Card */
+.vendorCard {
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 8px 8px 4px);
+  background-color: white;
+  border-radius: 32px;
+  opacity: 1;
+  margin-bottom: 32px;
+}
+
+.vendorCard img {
+  width: 100%;
+  height: 250px;
+  border-radius: 32px 32px 0 0;
+}
+
+.vendor-text {
+  padding: 12px;
+  max-height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vendor-name {
+  font-size: 24px;
+  font-family: "Merriweather", sans-serif;
+}
+
+.vendor-location {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.vendor-description {
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+.type-filter {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px white solid;
+  margin-bottom: 20px;
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 8px 8px 4px);
+}
+
+.view-more {
+  background-color: transparent;
+  color: #1b1917;
+  border: 2px solid #1b1917;
+  font-size: 14px;
+  margin: 12px;
+}
+
+.view-more:hover {
+  color: black;
+}
+
+/* Container for the whole page */
+.details__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Image wrapper to control the image display */
+.details-img__wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for the image */
+.details-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Location styling */
+.details-location {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Website link styling */
+.website {
+  color: #1a0dab;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+/* Social media links styling */
+.deatils__container a {
+  margin-right: 12px;
+  color: #1b1917;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.details__container .para {
+  margin-top: 16px;
+}
+
+/* Add some space before the footer or bottom of the page */
+.details__container:after {
+  content: "";
+  display: block;
+  height: 50px;
+}
+
+footer {
+  background-color: #1b1917;
+  color: white;
+  padding: 40px 0px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer ul {
+  display: flex;
+  list-style-type: none;
+}
+
+footer a {
+  color: white;
+  margin: 0px 8px 0px 8px;
+  text-decoration: none;
+}
+
+/* Media Query for devices with widths less than or equal to 480px */
+@media only screen and (max-width: 480px) {
+  body,
+  .container,
+  header,
+  .header__left,
+  .featured_vendors__container,
+  #about-us .container,
+  .our-process__container,
+  .search__text {
+    /* Make the container's width 100% to use the full width of the screen */
+    width: 100%;
+  }
+
+  header h1 {
+    /* Decrease font size for titles */
+    font-size: 48px;
+  }
+
+  .section__title {
+    font-size: 32px;
+  }
+
+  p,
+  .para,
+  header p,
+  .button,
+  input,
+  textarea,
+  .vendor-description {
+    /* Decrease font size for text elements */
+    font-size: 14px;
+  }
+
+  .vendor-name {
+    font-size: 20px;
+  }
+
+  .vendor-location {
+    font-size: 16px;
+  }
+
+  .featured_vendors__item,
+  .process-step__container,
+  .our-process__container,
+  .get-listed__container {
+    /* Adjust layout and spacing for navigation, featured items, process steps, and form */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+  }
+
+  .about-us__left {
+    /* Adjust image size */
+    display: none;
+  }
+
+  .button {
+    /* Adjust button and filter sizes */
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .type-filter {
+    padding: 8px 12px;
+  }
+
+  .header__left,
+  .about-us__right {
+    /* Stack elements vertically */
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .featured_vendors__item,
+  .our-process__container {
+    /* Adjust featured items and process steps to take full width */
+    width: 100%;
+  }
+
+  .vendorCard img {
+    /* Adjust vendor card image size */
+    height: auto;
+  }
+
+  /* Adjust input and textarea fields to be more mobile-friendly */
+  input,
+  textarea {
+    padding: 12px 16px;
+  }
+
+  /* Adjust the layout of the search bar wrapper */
+  .searchbar__wrapper {
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .searchbar__wrapper input {
+    width: 100%;
+  }
+  .searchbar__wrapper button {
+    width: 50%;
+  }
+
+  /* Ensure content doesn't look too cramped */
+  .container {
+    padding: 0 24px;
+  }
+
+  .details-img__wrapper {
+    /* You might want to adjust image wrapper for smaller screens */
+    margin-bottom: 15px;
+  }
+
+  .details-image {
+    /* Ensure image is not too large on small screens */
+    width: 100%;
+    height: auto;
+  }
+
+  .details-location {
+    font-size: 16px; /* Adjust font size for location */
+  }
+
+  .website,
+  a[href*="instagram"],
+  a[href*="facebook"] {
+    font-size: 14px; /* Adjust link size for better readability */
+    display: block; /* Stack links vertically */
+    text-align: left; /* Center-align the links */
+  }
+
+  .btn__menu {
+    display: block;
+  }
+
+  .nav__list {
+    display: none;
+  }
+}
+
+/* Media Query for devices with widths less than or equal to 768px */
+@media only screen and (max-width: 768px) {
+  body,
+  .container,
+  header,
+  .header__left,
+  .featured_vendors__container,
+  #about-us .container,
+  .our-process__container,
+  .search__text,
+  .results {
+    /* Make the container's width 100% to use the full width of the screen */
+    width: 100%;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .btn__menu {
+    display: block;
+  }
+
+  .container,
+  nav {
+    padding: 0 24px;
+  }
 }
