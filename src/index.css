@@ -322,6 +322,7 @@ header p {
 /* Get Listed Form */
 #get-listed-form {
   height: calc(100vh - 80px);
+  padding: 20px 0px;
   display: flex;
   align-items: center;
   text-align: center;
