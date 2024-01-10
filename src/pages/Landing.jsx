@@ -1,6 +1,5 @@
 import React from "react";
 import FeaturedVendorItem from "../components/FeaturedVendorItem";
-import ProcessStep from "../components/ProcessStep";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBuilding,
@@ -8,9 +7,6 @@ import {
   faPaintBrush,
   faShieldHalved,
   faCamera,
-  faMagnifyingGlass,
-  faCheckSquare,
-  faClipboardList,
 } from "@fortawesome/free-solid-svg-icons";
 import AboutUs from "../assets/about-us-section.jpg";
 import GetListedForm from "../components/GetListedForm";
@@ -25,8 +21,10 @@ function Landing() {
             <div className="header__left--content">
               <h1>Bring your dream events to life</h1>
               <p>
-                Discover the perfect venue, decorators, entertainers and more
-                for your special occasion
+                Say goodbye to the hassle of hunting down vendors over a dozen
+                different platforms; say hello to a stress-free, consolidated
+                planning journey with Event Lemon. Find every vendor you could
+                need to bring your dream event to life.
               </p>
             </div>
             <div className="header__cta">
@@ -56,12 +54,12 @@ function Landing() {
             <FeaturedVendorItem
               emoji={<FontAwesomeIcon icon={faBuilding} />}
               name="Venue"
-              description="Find the perfect venue for your event, from intimate spaces to grand halls."
+              description="From wedding ceremonies to corporate conferences, no matter what event you’re planning, you can find the perfect venue for your event, from intimate spaces to grand halls."
             />
             <FeaturedVendorItem
               emoji={<FontAwesomeIcon icon={faPaintBrush} />}
               name="Decorators"
-              description="Transform your venue into a work of art with our talented decorators."
+              description="Your venue is the canvas of your event. Transform your venue into a work of art with our talented decorators."
             />
             <FeaturedVendorItem
               emoji={<FontAwesomeIcon icon={faKitchenSet} />}
@@ -71,17 +69,17 @@ function Landing() {
             <FeaturedVendorItem
               emoji={<FontAwesomeIcon icon={faCamera} />}
               name="Photographers"
-              description="Capture every moment of your special day with our skilled photographers."
+              description="Capture every moment of your special day with our skilled photographers and videographers."
             />
             <FeaturedVendorItem
               emoji={<FontAwesomeIcon icon={faShieldHalved} />}
               name="Entertainment"
-              description="Keep your guests entertained with our dynamic performers."
+              description="Our captivating performers ensure your guests are immersed in unforgettable entertainment."
             />
             <FeaturedVendorItem
               emoji={<FontAwesomeIcon icon={faShieldHalved} />}
               name="Security"
-              description="Ensure the safety of your guests with our professional security guards."
+              description="Ensure the safety of your guests with our professional security services."
             />
           </div>
         </div>
@@ -97,20 +95,27 @@ function Landing() {
               Welcome to Event Lemon, the cornerstone for exceptional event
               planning. Born from a passion for bringing people together, we've
               established a platform where every significant moment finds its
-              perfect match in venues, photographers, DJs, and more. We're more
+              perfect match in vendors to bring your vision to life. 
+              <br />
+              <br />
+              We're more
               than just a service; we're a collection of event enthusiasts, tech
               innovators, and customer care experts, all dedicated to making
-              your special occasions both memorable and effortless.
+              your special occasions both memorable and effortless. 
               <br />
               <br />
-              At Event Lemon, our mission is simple yet profound: to streamline
-              the event planning process without losing the touch of uniqueness
-              and personalization. Every vendor in our network is meticulously
-              selected for their creativity, reliability, and commitment to
-              excellence. We believe in not just meeting but exceeding
-              expectations, ensuring that every event is as unique and special
-              as our clients. Let us be a part of your journey in creating
-              experiences that last a lifetime.
+              At Event
+              Lemon, our mission is simple yet profound: to streamline the event
+              planning process without losing the touch of uniqueness and
+              personalisation. Every vendor in our network is meticulously
+              selected and renowned for their creativity, reliability, and
+              commitment to excellence. 
+              <br />
+              <br />
+              We believe in not just meeting but
+              exceeding expectations, ensuring that every event is as unique and
+              special as our clients. Let us be a part of your journey in
+              creating experiences that last a lifetime.
             </p>
           </div>
         </div>

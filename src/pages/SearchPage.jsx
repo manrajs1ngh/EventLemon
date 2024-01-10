@@ -38,9 +38,10 @@ function SearchPage() {
           <h2 className="section__title">Search for vendors in your area</h2>
           <p className="para">
             Find your ideal event vendors right here! Simply enter your location
-            and desired service to discover a world of top-rated professionals,
-            from stunning venues to dynamic entertainers. Begin your journey to
-            an unforgettable event experience now.
+            and desired service to discover a world of top-rated professionals.
+            <br />
+            <br />
+            Begin your journey to an unforgettable event experience now.
           </p>
           <SearchBar onSearch={handleSearch} />
         </div>
@@ -55,7 +56,9 @@ function SearchPage() {
                 <VendorCard key={vendor.id} vendor={vendor} />
               ))
             ) : (
-              <p className="para error-message">No vendors found in your location.</p>
+              <p className="para error-message">
+                No vendors found in your location.
+              </p>
             )}
           </div>
         </div>
