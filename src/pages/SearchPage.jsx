@@ -41,7 +41,7 @@ function SearchPage() {
       setSelectedType(initialType);
       filterVendors(searchLocation, initialType);
     }
-  }, [location]); // Dependency array only needs `location`
+  }, [location, searchLocation]); // Dependency array only needs `location`
   
   
 
