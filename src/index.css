@@ -213,6 +213,10 @@ header p {
 }
 
 /* Featured Vendors */
+.featured_vendors__item {
+  cursor: pointer;
+}
+
 #featured-vendors {
   padding: 120px 0px;
   background-color: #fbe8d8;
@@ -511,23 +515,42 @@ footer {
   padding: 40px 0px;
   text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
-footer li {
-  list-style: none;
+.footer-contact {
+  margin-bottom: 20px;
 }
 
-footer ul {
-  display: flex;
-  list-style-type: none;
+.footer-contact h3 {
+  margin-bottom: 10px;
 }
 
-footer a {
-  color: white;
-  margin: 0px 8px 0px 8px;
+.footer-contact p,
+.footer-contact a {
+  margin-bottom: 5px;
   text-decoration: none;
+  color: white;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer h3 {
+  margin-bottom: 10px;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white; /* Change as needed */
 }
 
 /* Media Query for devices with widths less than or equal to 480px */

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { vendors } from "../data";
 import SearchBar from "../components/Searchbar.jsx";
 import TypeFilter from "../components/TypeFilter.jsx";
@@ -8,7 +9,9 @@ function SearchPage() {
   const [filteredVendors, setFilteredVendors] = useState(vendors);
   const [searchLocation, setSearchLocation] = useState("");
   const [selectedType, setSelectedType] = useState("");
-  const vendorTypes = [...new Set(vendors.map((vendor) => vendor.type))]; // Extract unique vendor types
+  const vendorTypes = [...new Set(vendors.map((vendor) => vendor.type))];
+
+  const location = useLocation();
 
   const handleSearch = (location) => {
     setSearchLocation(location);
@@ -31,6 +34,17 @@ function SearchPage() {
     setFilteredVendors(filtered);
   };
 
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const initialType = queryParams.get("type");
+    if (initialType) {
+      setSelectedType(initialType);
+      filterVendors(searchLocation, initialType);
+    }
+  }, [location]); // Dependency array only needs `location`
+  
+  
+
   return (
     <div className="container">
       <div className="search__container">
@@ -49,6 +63,7 @@ function SearchPage() {
           <TypeFilter
             vendorTypes={vendorTypes}
             onTypeChange={handleTypeChange}
+            value={selectedType}
           />
           <div className="results">
             {filteredVendors.length > 0 ? (

@@ -58,7 +58,7 @@ function Landing() {
             />
             <FeaturedVendorItem
               emoji={<FontAwesomeIcon icon={faPaintBrush} />}
-              name="Decorators"
+              name="Decorater"
               description="Your venue is the canvas of your event. Transform your venue into a work of art with our talented decorators."
             />
             <FeaturedVendorItem
@@ -68,7 +68,7 @@ function Landing() {
             />
             <FeaturedVendorItem
               emoji={<FontAwesomeIcon icon={faCamera} />}
-              name="Photographers"
+              name="Photography"
               description="Capture every moment of your special day with our skilled photographers and videographers."
             />
             <FeaturedVendorItem
